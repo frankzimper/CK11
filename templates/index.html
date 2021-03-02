@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Top Ten</title>
+        <style>
+            th {
+                padding: 0.1em 1em 0.1em 0.1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Die Besten der Besten der Besten</h1>
+        <table id="topten">
+            <tr>
+                <th class="rang">Platz</th>
+                <th class="name">Name</th>
+                <th class="versuche">Ø Versuche </th>
+            </tr>
+            {% for spieler in topten %}
+            <tr>
+                <td class="spielerrang">{{ spieler.platz }}</td>
+                <td class="spielername">{{ spieler.name }}</td>
+                <td class="spielerversuche">{{ '%4.2f' | format(spieler.versuche) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
